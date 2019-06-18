@@ -1,14 +1,7 @@
 <template>
     <b-container fluid class="picture-grid-container">
-        <b-row>
-            <pictureItem />
-            <pictureItem />
-            <pictureItem />
-            <pictureItem />
-            <pictureItem />
-            <pictureItem />
-            <pictureItem />
-            <pictureItem />
+        <b-row >
+            <pictureItem v-bind:key="pictures.id" v-for="pictures in pictures" v-bind:picture="pictures"/>
         </b-row>
     </b-container>
 </template>
@@ -18,7 +11,8 @@ import pictureItem from '../components/picture-item.vue'
 
 export default {
     name: 'pictureGridContainer',
-      components: {
+    props: ["pictures"],
+    components: {
         pictureItem,
     }
 }
