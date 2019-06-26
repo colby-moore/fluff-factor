@@ -1,8 +1,8 @@
 <template>
-    <b-container fluid class="picture-grid-container">
-        <b-row >
-            <pictureItem v-bind:key="pictures.id" v-for="pictures in pictures" v-bind:picture="pictures"/>
-        </b-row>
+    <b-container class="picture-grid-container">
+
+        <pictureItem v-bind:key="pictures.id" v-for="pictures in pictures" v-bind:picture="pictures"/>
+
     </b-container>
 </template>
 
@@ -19,8 +19,22 @@ export default {
 </script>
 
 <style>
-    .picture-grid-container{
-        background-color: gray;
-        min-height: 100vh;
+    .picture-grid-container{  
+        align-items: center;    
+        background: #242A2F;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 65vh;
+        width: 70%;
+        -webkit-box-shadow: 2px 0px 47px 2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 0px 47px 2px rgba(0,0,0,0.75);
+        box-shadow: 2px 0px 47px 2px rgba(0,0,0,0.75);
+        border-radius: 8px;
+    }
+
+    .picture-grid-container .row{  
+        min-height: 65vh;
     }
 </style>
